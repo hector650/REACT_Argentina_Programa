@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.contenedor{
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin: auto;
+    margin-top: 50px;
+}
+.contenedor label{
+    font-size: 18px;
+    color: red;
+}
+.contenedor select {
+    font-size: 18px;
+}
+#valor{
+    font-size: 25px;
+    margin-top: 25px;    
+}
+input{
+    font-size: 20px;
+}
+</style>
+<body>
+    <div class="contenedor">
+<div class="contenedor">
+    <label  for="floatingInput">Nombre</label>
+    <input type="text" class="form-control ">
+    <label  for="floatingInput">Apellido</label>
+    <input type="text" class="form-control ">
+    <label  for="floatingInput">DNI</label>
+    <input type="number" class="form-control ">
+    <label  for="floatingInput">Email</label>
+    <input type="email" class="form-control ">
+    <label  for="floatingInput">Telefono</label>
+    <input type="number" class="form-control ">
+    <label  for="floatingInput">seguro</label>
+    <select id="tipodeseguro" >
+        <option id="costo1" value="500">Básico</option>
+        <option id="costo2" value="1000">Intermedio</option>
+        <option id="costo3" value="1500">Premium</option>
+    </select>
+    <p>Costo de Seguro</p>
+    <p id="valor">Costo: $ 0</p>
+</div>
+<script>
+    var seleccion = document.getElementById('tipodeseguro');
+    const valorSeguro = document.getElementById('valor');
+
+    seleccion.addEventListener('change', function() {
+        valorSeguro.textContent = "Costo: $" + seleccion.value;
+    });
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

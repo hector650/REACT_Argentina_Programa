@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+</head>
+<body>
+    <br>
+    <!-- ++++++++++++++++++++++++++ NUM1 ++++++++++++++++++++++++ --> 
+    <div class="container">
+        <label for="NUM1">NUMERO1</label>
+        <input type="text" class="form-control m-2" name="NUM1" id="NUM1" value="0">
+
+        <label for="NUM2">NUMERO2</label>
+        <input type="text" class="form-control m-2" name="NUM2" id="NUM2" value="0" >
+        <label for="resultado">RESULTADO</label>
+        <input type="text" class="form-control m-2" name="resultado" id="resultado"readonly>
+    </div>
+    <br>
+    <button id="suma">+</button>
+    <button id="resta">-</button>
+    <button id="division">/</button>
+    <button id="multiplicacion">*</button>
+    <script>
+        // Obtener referencias a los elementos HTML
+        const NUM1 = document.getElementById("NUM1");
+        const NUM2 = document.getElementById("NUM2");
+        const resultado = document.getElementById("resultado");
+
+        // Agregar manejadores de eventos a los botones
+        document.getElementById("suma").addEventListener("click", function() {
+            const num1 = parseFloat(NUM1.value);
+            const num2 = parseFloat(NUM2.value);
+            resultado.value = num1 + num2;
+        });
+
+        document.getElementById("resta").addEventListener("click", function() {
+            const num1 = parseFloat(NUM1.value);
+            const num2 = parseFloat(NUM2.value);
+            resultado.value = num1 - num2;
+        });
+
+        document.getElementById("division").addEventListener("click", function() {
+            const num1 = parseFloat(NUM1.value);
+            const num2 = parseFloat(NUM2.value);
+            if (num2 !== 0) {
+                resultado.value = num1 / num2;
+            } else {
+                resultado.value = "Error";
+            }
+        });
+
+        document.getElementById("multiplicacion").addEventListener("click", function() {
+            const num1 = parseFloat(NUM1.value);
+            const num2 = parseFloat(NUM2.value);
+            resultado.value = num1 * num2;
+        });
+    </script>
+</body>
+</html>
